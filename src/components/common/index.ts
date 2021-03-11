@@ -1,7 +1,8 @@
 
 import yuCard from "./card.vue";
+import { App } from "vue";
 
-const plugin = (Vue:any) => {
+const plugin = (Vue: App<Element>) => {
     Vue.component("YuCard",yuCard);
 }
 
