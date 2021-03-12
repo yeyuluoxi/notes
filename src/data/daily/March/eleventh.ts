@@ -15,13 +15,23 @@ const second: IDaily = {
     type: IType.Js,
     title: "==时Boolean取值",
     note: `true:~
-        undefined == null | false == 0 | "" == 0 | "" == false~
+        undefined == null | false == 0 | "" == 0 | "" == false | " " == 0 | " " == false | "[object Object]" == {} | [] == 0 | [] == false~
         false:~
-        undefined == false | undefined == 0 | null == 0 | "" == undefined | "" == null | false == null~
+        undefined == false | undefined == 0 | null == 0 | "" == undefined | "" == null | false == null | " " == ""~
         {} == {} | [] == []~
-        NaN与任何值`
+        NaN与任何值~
+        结语:对象(.valueOf()/.toString)-->字符串(Number)-->数字<--(Number)布尔型`
 }
 
-const MarchEleventh: Array<IDaily> = [ first, second ];
+const third: IDaily = {
+    date: [ month.March, date.Eleventh ],
+    type: IType.Vue,
+    title: "vuex",
+    note: `mutations: this.$store.commit("方法名",参数)/this.$store.commit({ commit:"方法名",amount:参数})~
+            actions: this.$store.dispatch("方法名",参数)/this.$store.dispatch({ type:"方法名",amount:参数})`
+}
+
+
+const MarchEleventh: Array<IDaily> = [ first, second, third ];
 
 export default MarchEleventh;
