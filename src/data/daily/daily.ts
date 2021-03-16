@@ -6,6 +6,7 @@ import MarchEleventh from "@/data/daily/March/eleventh";
 import MarchTwelfth from "@/data/daily/March/twelfth";
 import MarchThirteenth from "@/data/daily/March/thirteenth";
 import MarchFifteenth from "@/data/daily/March/fifteenth";
+import MarchSixteenth from "@/data/daily/March/sixteenth";
 
 const daily:Array<IDaily> = [
     ...MarchNinth,
@@ -13,7 +14,8 @@ const daily:Array<IDaily> = [
     ...MarchEleventh,
     ...MarchTwelfth,
     ...MarchThirteenth,
-    ...MarchFifteenth
+    ...MarchFifteenth,
+    ...MarchSixteenth
 ];
 
 daily.forEach( elem => {
