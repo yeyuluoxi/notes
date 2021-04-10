@@ -51,7 +51,7 @@ import getDaily from "@/hooks/useGetDaily";
 export default defineComponent({
 	setup(){
 
-    const typeList = ref<IType[]>([ IType.Daily, IType.Html, IType.Css, IType.Js, IType.React, IType.Vue, IType.TypeScript ]);
+    const typeList = ref<IType[]>([ IType.Daily, IType.Html, IType.Css, IType.Js, IType.React, IType.Vue, IType.TypeScript, IType.Cmd, IType.Mysql ]);
 		const type = ref<IType>(IType.Daily);
 
 

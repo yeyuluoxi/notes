@@ -55,7 +55,9 @@ export enum IType{
     React = "react",
     Vue = "vue",
     TypeScript = "typeScript",
-    Daily = "log"
+    Daily = "log",
+    Cmd = "cmd",
+    Mysql = "mysql"
 }
 
 export interface IDaily{
