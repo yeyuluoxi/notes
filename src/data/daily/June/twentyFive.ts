@@ -108,6 +108,22 @@ const dealTime: ITime = (date, format) => {
   pre: true
 }
 
-const JuneTwentyFive: Array<IDaily> = [first, second, third];
+const forth: IDaily = {
+  date: [month.June, date.TwentyFifth],
+  type: IType.Css,
+  title: "white-space",
+  note: `
+    white-space属性设置如何处理元素内的空白~
+    normal: 默认。空白,换行会被浏览器忽略。~
+    pre: 空白,换行会被浏览器保留。其行为方式类似HTML中的 <pre> 标签。~
+    nowrap: 文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。~
+    pre-wrap: 保留空白符序列，但是正常地进行换行。~
+    pre-line: 合并空白符序列，但是保留换行符。(每行都没有缩进)~
+    inherit: 规定应该从父元素继承 white-space 属性的值。(IE不支持)~
+    注: 使用<pre>时,<pre>标签不在同一行首行会有缩进
+  `
+}
+
+const JuneTwentyFive: Array<IDaily> = [first, second, third, forth];
 
 export default JuneTwentyFive;

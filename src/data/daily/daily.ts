@@ -27,7 +27,7 @@ const daily: Array<IDaily> = [
 ];
 
 daily.forEach(elem => {
-  if (typeof elem.note === "string") elem.note = elem.note.split("~");
+  if (typeof elem.note === "string") elem.note = elem.note.trim().split("~");
 })
 
 export default daily;

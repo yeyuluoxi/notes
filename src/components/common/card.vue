@@ -16,13 +16,9 @@
         <li
           v-for="(item,index) in daily.note"
           :key="index"
+          :class="{pre: daily.pre}"
         >
-          <pre v-if="daily.pre">
-            {{ item }}
-          </pre>
-          <span v-else>
-            {{ item }}
-          </span>
+          {{ item }}
         </li>
       </ul>
     </div>
@@ -72,6 +68,9 @@ export default defineComponent({
     padding-top: 6px;
     ul li{
       line-height: 1.5;
+      &.pre{
+        white-space: pre;
+      }
     }
   }
 }
