@@ -1,10 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
+const {name} = require('./package');
 
 module.exports = {
 	publicPath: "./",
 	outputDir: 'note',
 	assetsDir: 'static',
-	// filenameHashing: true,
+	filenameHashing: true,
 	productionSourceMap: false,
 
 	devServer: {
@@ -13,5 +14,12 @@ module.exports = {
 		},
 		hot: true,
 		port: 6683,
+	},
+	configureWebpack: {
+		output: {
+			library: `${name}-[name]`,
+			libraryTarget: 'umd',// 把微应用打包成 umd 库格式
+			jsonpFunction: `webpackJsonp_${name}`,
+		},
 	}
 }

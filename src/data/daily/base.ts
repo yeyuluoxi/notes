@@ -64,5 +64,5 @@ export interface IDaily{
     date: [ month, date ];
     type: IType;
     title?: string;
-    note: string|Array<string>;
+    note: string | Array<string>;
 }

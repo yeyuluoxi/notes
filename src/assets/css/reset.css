@@ -6,7 +6,7 @@ body,div,span,img,textarea,input,button,ul,ol,li,h1,h2,h3,h4,h5,h6,p,table,th,tr
     font-family: "楷体", serif;
 }
 .container{
-    width: 1080px;
+    width: 1280px;
     margin: 0 auto;
     background-color: aliceblue;
 }

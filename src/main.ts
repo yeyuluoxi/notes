@@ -1,7 +1,7 @@
-import { createApp } from 'vue';
-import App from './App.vue';
+import {createApp, App} from 'vue';
+import Root from './App.vue';
 
-const Vue = createApp(App);
+const Vue: App<Element> = createApp(Root);
 
 import router from './router';
 import store from './store';
