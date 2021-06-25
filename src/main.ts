@@ -10,6 +10,6 @@ Vue.use(store).use(router);
 import plugin from "@/components/common";
 Vue.use(plugin);
 
-import "@/assets/css/reset.css"
+import "@/assets/css/reset.scss"
 
 Vue.mount('#app');

@@ -54,15 +54,16 @@ export enum IType{
     Js = "js",
     React = "react",
     Vue = "vue",
-    TypeScript = "typeScript",
+    TypeScript = "ts",
     Daily = "log",
     Cmd = "cmd",
     Mysql = "mysql"
 }
 
 export interface IDaily{
-    date: [ month, date ];
-    type: IType;
-    title?: string;
-    note: string | Array<string>;
+    date: [ month, date ],
+    type: IType,
+    title?: string,
+    note: string | Array<string>,
+    pre?: boolean
 }

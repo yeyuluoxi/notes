@@ -1,0 +1,38 @@
+body, div, span, img, textarea, input, button, ul, ol, li, h1, h2, h3, h4, h5, h6, p, table, th, tr, td, tbody, tfoot, thead, form, pre, code {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "楷体", serif;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    &::-webkit-scrollbar {
+         display: none; /* Chrome Safari */
+        width: 0;
+     }
+}
+
+.container {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: aliceblue;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+.scrollNone {
+    scrollbar-width: 0;
+}
+
+.scrollNone::-webkit-scrollbar {
+    display: none;
+}
+
+html, body, #app{
+    height: 100%;
+    width: 100%;
+}

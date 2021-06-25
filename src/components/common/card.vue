@@ -17,7 +17,12 @@
           v-for="(item,index) in daily.note"
           :key="index"
         >
-          {{ item }}
+          <pre v-if="daily.pre">
+            {{ item }}
+          </pre>
+          <span v-else>
+            {{ item }}
+          </span>
         </li>
       </ul>
     </div>

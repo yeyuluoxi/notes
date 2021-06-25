@@ -92,7 +92,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .index{
-  min-height: 100vh;
+  height: 100%;
   .title{
     font-size: 20px;
     padding:12px 0;
@@ -123,7 +123,7 @@ export default defineComponent({
   .main{
     padding-top: 12px;
     display: flex;
-    height: calc(100vh - 120px);
+    height: calc(100% - 120px);
     .left{
       border-right: 1px solid #000;
       padding: 12px 12px 0;
