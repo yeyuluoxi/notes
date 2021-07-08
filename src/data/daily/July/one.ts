@@ -1,7 +1,7 @@
 import {date, IDaily, IType, month} from "@/data/daily/base";
 
 const first: IDaily = {
-  date: [month.June, date.Thirtieth],
+  date: [month.July, date.First],
   type: IType.Vue,
   title: "",
   note: ["获取事件参数时,$event可获取传递的第一个参数,如果没有,则获取事件",
