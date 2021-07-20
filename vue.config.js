@@ -3,7 +3,7 @@ const {name} = require('./package');
 
 module.exports = {
 	publicPath: "./",
-	outputDir: 'F:/myself/electron/note',
+	outputDir: 'note',
 	assetsDir: 'static',
 	filenameHashing: true,
 	productionSourceMap: false,
