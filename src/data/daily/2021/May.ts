@@ -155,7 +155,8 @@ const May: Array<IDaily> = [
   first,
   second,
   third,
-  forth
+  forth,
+  fifth
 ];
 
 export default May;
