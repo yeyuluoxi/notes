@@ -1,39 +1,21 @@
 import {IDaily} from "@/data/daily/base";
 
-import MarchNinth from "@/data/daily/March/ninth";
-import MarchTenth from "@/data/daily/March/tenth";
-import MarchEleventh from "@/data/daily/March/eleventh";
-import MarchTwelfth from "@/data/daily/March/twelfth";
-import MarchThirteenth from "@/data/daily/March/thirteenth";
-import MarchFifteenth from "@/data/daily/March/fifteenth";
-import MarchSixteenth from "@/data/daily/March/sixteenth";
-
-import AprilTenth from "@/data/daily/April/tenth";
-
-import JuneTwentyFive from "@/data/daily/June/twentyFive";
-import JuneThirty from "@/data/daily/June/thirty";
-
-import JulyFirst from "@/data/daily/July/one";
-import JulyEighth from "@/data/daily/July/eight";
-import JulyTwenty from "@/data/daily/July/twenty";
+import January from "@/data/daily/2021/January";
+import February from "@/data/daily/2021/February";
+import March from "@/data/daily/2021/March";
+import April from "@/data/daily/2021/April";
+import May from "@/data/daily/2021/May";
+import June from "@/data/daily/2021/June";
+import July from "@/data/daily/2021/July";
 
 const daily: Array<IDaily> = [
-  ...MarchNinth,
-  ...MarchTenth,
-  ...MarchEleventh,
-  ...MarchTwelfth,
-  ...MarchThirteenth,
-  ...MarchFifteenth,
-  ...MarchSixteenth,
-
-  ...AprilTenth,
-
-  ...JuneTwentyFive,
-  ...JuneThirty,
-
-  ...JulyFirst,
-  ...JulyEighth,
-  ...JulyTwenty
+  ...January,
+  ...February,
+  ...March,
+  ...April,
+  ...May,
+  ...June,
+  ...July
 ];
 
 daily.forEach(elem => {

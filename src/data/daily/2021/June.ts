@@ -74,7 +74,7 @@ const third: IDaily = {
   type: IType.Js,
   title: "时间处理",
   note: [
-`
+    `
 const list = {
   yyyy: "getFullYear",
   mm: "getMonth",
@@ -84,7 +84,7 @@ const list = {
   ss: "getSeconds"
 };
 type ITime = (date?: Date | number | null, format?: string) => string;`,
-`
+    `
 const dealTime: ITime = (date, format) => {
   //设置默认初始值
   if (date) {
@@ -124,6 +124,34 @@ const forth: IDaily = {
   `
 }
 
-const JuneTwentyFive: Array<IDaily> = [first, second, third, forth];
+const fifth: IDaily = {
+  date: [month.June, date.Thirtieth],
+  type: IType.Vue,
+  title: "vue3缓存",
+  note: [`
+<router-view v-slot="{ Component }">
+  <keep-alive>
+    <component
+      :is="Component"
+      v-if="$route.meta.keepAlive"
+      :key="$route.path"
+    />
+  </keep-alive>
+  <component
+    :is="Component"
+    v-if="!$route.meta.keepAlive"
+    :key="$route.path"
+  />
+</router-view>
+  `,
+    "注: 不要动态修改keepAlive的值"
+  ],
+  pre: true
+}
 
-export default JuneTwentyFive;
+const June: Array<IDaily> = [
+  first, second, third, forth,
+  fifth
+];
+
+export default June;
