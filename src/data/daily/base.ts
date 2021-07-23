@@ -62,7 +62,7 @@ export enum IType {
 export interface IDaily {
   date: [month, date],
   type: IType,
-  title?: string,
+  title: string,
   note: string | Array<string>,
   pre?: boolean
 }

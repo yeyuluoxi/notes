@@ -1,7 +1,7 @@
 import {date, IDaily, IType, month} from "@/data/daily/base";
 
 const first: IDaily = {
-  date: [month.February, date.Seventeenth],
+  date: [month.February, date.Fifth],
   type: IType.Js,
   title: "微信公众平台",
   note: `
@@ -43,7 +43,7 @@ page.wxss   各页面专有的样式文件
 };
 
 const second: IDaily = {
-  date: [month.January, date.Eighteenth],
+  date: [month.February, date.Seventeenth],
   type: IType.Js,
   title: "小程序",
   note: `
@@ -92,7 +92,7 @@ sitemap.json   --设置微信爬虫的读取规则,默认情况下,所有的情�
 };
 
 const third: IDaily = {
-  date: [month.January, date.Fifth],
+  date: [month.February, date.Eighteenth],
   type: IType.Js,
   title: "webSocket",
   note: `
@@ -116,7 +116,7 @@ server.on("事件名称",回调函数)
 };
 
 const forth: IDaily = {
-  date: [month.January, date.Fifth],
+  date: [month.February, date.Fifth],
   type: IType.Js,
   title: "微信云服务",
   note: `
@@ -154,7 +154,7 @@ const forth: IDaily = {
 };
 
 const fifth: IDaily = {
-  date: [month.January, date.Nineteenth],
+  date: [month.February, date.Nineteenth],
   type: IType.Js,
   title: "微信云数据库",
   note: `

@@ -17,6 +17,12 @@
           {{ item }}
         </span>
       </div>
+      <input
+        v-model="key"
+        class="input"
+        placeholder="搜索标题或内容"
+        @keyup.enter="searchKey"
+      >
     </div>
     <div class="main">
       <div class="left scrollNone">
@@ -59,6 +65,23 @@ export default defineComponent({
     const typeDailyList = ref<IDaily[]>([]);
     const list = ref<IDaily[]>([]);
 
+    const key = ref<string>("");
+    const subKey = ref<string>("");
+
+    const searchKey = () => {
+      if(key.value === subKey.value) return;
+      subKey.value = key.value;
+      list.value = typeDailyList.value.filter(elem => {
+        if(elem.title.includes(subKey.value)){
+          return true;
+        }
+        if(typeof elem.note !== "string"){
+          return elem.note.some(item => item.includes(subKey.value))
+        }
+        return false;
+      });
+    }
+
     const logDate = ref<string>("");
     const dateList = ref<string[]>([]);
 
@@ -86,11 +109,13 @@ export default defineComponent({
     selectType(type.value);
 
 		return {
+		  key, searchKey,
 		  type, typeList, selectType, logDate, dailyList, dateList, typeDailyList, list, selectDate
 		};
 	}
 });
 </script>
+
 <style lang="scss" scoped>
 .index{
   height: 100%;
@@ -104,6 +129,7 @@ export default defineComponent({
     border-left: 0;
     border-right: 0;
     display: flex;
+    align-items: center;
     .item{
       min-width: 80px;
       text-align: center;
