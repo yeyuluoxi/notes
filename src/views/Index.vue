@@ -24,7 +24,10 @@
         @keyup.enter="searchKey"
       >
     </div>
-    <div class="main">
+    <div
+      ref="listRef"
+      class="main"
+    >
       <div class="left scrollNone">
         <div
           v-for="(item,index) in dateList"
@@ -53,6 +56,7 @@ import {defineComponent, ref} from 'vue';
 import {IDaily, IType} from "@/data/daily/base";
 import daily from "@/data/daily/daily";
 import getDaily from "@/hooks/useGetDaily";
+import getPDF from "@/hooks/getPDF";
 
 export default defineComponent({
 	setup(){
@@ -68,7 +72,10 @@ export default defineComponent({
     const key = ref<string>("");
     const subKey = ref<string>("");
 
+    const listRef = ref<HTMLElement | null>(null);
+
     const searchKey = () => {
+      getPDF(listRef.value);
       if(key.value === subKey.value) return;
       subKey.value = key.value;
       list.value = typeDailyList.value.filter(elem => {
@@ -109,7 +116,7 @@ export default defineComponent({
     selectType(type.value);
 
 		return {
-		  key, searchKey,
+		  key, searchKey, listRef,
 		  type, typeList, selectType, logDate, dailyList, dateList, typeDailyList, list, selectDate
 		};
 	}
