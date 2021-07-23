@@ -57,11 +57,25 @@ tsconfig.json(注意文件所在位置)
   pre: true
 };
 
+const fifth: IDaily = {
+  date: [month.July, date.TwentyThird],
+  type: IType.Js,
+  title: "vant dialog",
+  note: `
+在使用this.$dialog方法时,如果页面存在一个由该方法生成的元素,则方法不会触发
+若已存在弹窗,需先清除
+const dialogElem = document.querySelector("body>.van-dialog");
+if(dialogElem) document.body.removeChild(dialogElem);
+  `,
+  pre: true
+};
+
 const July: Array<IDaily> = [
   first,
   second,
   third,
-  forth
+  forth,
+  fifth
 ];
 
 export default July;
