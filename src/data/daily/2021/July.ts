@@ -70,12 +70,72 @@ if(dialogElem) document.body.removeChild(dialogElem);
   pre: true
 };
 
+const sixth: IDaily = {
+  date: [month.July, date.TwentyFourth],
+  type: IType.Js,
+  title: "echarts 阴影缩放",
+  note: `
+可由两层geo叠放,一层给阴影,然后错位
+需关闭动画效果,否则缩放时两者有偏差
+mapChart.off("georoam");
+mapChart.on('georoam', (params) => {
+  const zoomOption = mapChart?.getOption();//获得option对象
+  if(zoomOption){
+    if (params.zoom) { //缩放
+      // @ts-ignore
+      zoomOption.geo[0].zoom = zoomOption.geo[1].zoom;//下层geo的缩放等级跟着上层的geo一起改变
+      // @ts-ignore
+      zoomOption.geo[0].center = zoomOption.geo[1].center;//下层的geo的中心位置随着上层geo一起改变
+    } else {//拖曳
+      // @ts-ignore
+      zoomOption.geo[0].center = zoomOption.geo[1].center;//下层的geo的中心位置随着上层geo一起改变
+    }
+    mapChart?.setOption(zoomOption);//设置option
+  }
+});
+  `,
+  pre: true
+};
+
+const seventh: IDaily = {
+  date: [month.July, date.TwentySixth],
+  type: IType.Js,
+  title: "element-plus table",
+  note: `
+vue3 + ts + element-plus
+使用table固定高度时,单元格内有图片时,第一次加载无法滚动,筛选或切换页码后可以
+查看两者区别后,解决问题
+.el-table__body-wrapper{
+  overflow: auto;
+}
+  `,
+  pre: true
+};
+
+const eighth: IDaily = {
+  date: [month.July, date.TwentySeventh],
+  type: IType.Js,
+  title: "element-plus table",
+  note: `
+vue3 + ts + element-plus
+使用table固定高度时,滚动条无法消去
+查看源码后,找到滚动条宽度来源和所在
+colgroup>col[name=gutter]{
+  width: 0 !important;
+  display: none !important;
+}
+  `,
+  pre: true
+};
+
 const July: Array<IDaily> = [
   first,
   second,
   third,
   forth,
-  fifth
+  fifth,
+  sixth,
+  seventh, eighth
 ];
 
 export default July;

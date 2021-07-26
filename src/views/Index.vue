@@ -56,7 +56,7 @@ import {defineComponent, ref} from 'vue';
 import {IDaily, IType} from "@/data/daily/base";
 import daily from "@/data/daily/daily";
 import getDaily from "@/hooks/useGetDaily";
-import getPDF from "@/hooks/getPDF";
+// import getPDF from "@/hooks/getPDF";
 
 export default defineComponent({
 	setup(){
@@ -73,21 +73,6 @@ export default defineComponent({
     const subKey = ref<string>("");
 
     const listRef = ref<HTMLElement | null>(null);
-
-    const searchKey = () => {
-      getPDF(listRef.value);
-      if(key.value === subKey.value) return;
-      subKey.value = key.value;
-      list.value = typeDailyList.value.filter(elem => {
-        if(elem.title.includes(subKey.value)){
-          return true;
-        }
-        if(typeof elem.note !== "string"){
-          return elem.note.some(item => item.includes(subKey.value))
-        }
-        return false;
-      });
-    }
 
     const logDate = ref<string>("");
     const dateList = ref<string[]>([]);
@@ -111,6 +96,28 @@ export default defineComponent({
       setDateList();
       selectDate();
     };
+
+    const searchKey = () => {
+      // if(listRef.value) getPDF(listRef.value.querySelector(".yuCard"));
+      if(key.value === subKey.value) return;
+      subKey.value = key.value;
+      const date: string[] = [];
+      list.value = typeDailyList.value.filter(elem => {
+        if(elem.title.includes(subKey.value)){
+          date.push(elem.date.join("-"))
+          return true;
+        }
+        // if(typeof elem.note !== "string"){
+        //   return elem.note.some(item => item.includes(subKey.value))
+        // }
+        if(typeof elem.note !== "string" && elem.note.some(item => item.includes(subKey.value))){
+          date.push(elem.date.join("-"));
+          return true;
+        }
+        return false;
+      });
+      dateList.value = [...new Set(date)];
+    }
 
     //初始化
     selectType(type.value);
