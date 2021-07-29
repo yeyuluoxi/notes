@@ -128,6 +128,20 @@ colgroup>col[name=gutter]{
   pre: true
 };
 
+const ninth: IDaily = {
+  date: [month.July, date.TwentyEighth],
+  type: IType.Css,
+  title: "弹性布局",
+  note: `
+弹性布局实现强制等分
+flex-grow: 1;
+width: 0;
+注: flex: 1;等价于
+flex: 1 1 auto;
+  `,
+  pre: true
+};
+
 const July: Array<IDaily> = [
   first,
   second,
@@ -135,7 +149,8 @@ const July: Array<IDaily> = [
   forth,
   fifth,
   sixth,
-  seventh, eighth
+  seventh, eighth,
+  ninth
 ];
 
 export default July;
