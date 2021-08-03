@@ -128,6 +128,23 @@ colgroup>col[name=gutter]{
   pre: true
 };
 
+const ninth: IDaily = {
+  date: [month.July, date.TwentyEighth],
+  type: IType.Js,
+  title: "vue3 img",
+  note: `
+vue3图片引入方式
+html
+  <img
+    :src="require('@/assets/image/office/' + picture)"
+    alt=""
+  >
+js
+  img = require("@/assets/image/menu/" + imgName);
+`,
+  pre: true
+};
+
 const July: Array<IDaily> = [
   first,
   second,
@@ -135,7 +152,8 @@ const July: Array<IDaily> = [
   forth,
   fifth,
   sixth,
-  seventh, eighth
+  seventh, eighth,
+  ninth
 ];
 
 export default July;
