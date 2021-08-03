@@ -130,6 +130,20 @@ colgroup>col[name=gutter]{
 
 const ninth: IDaily = {
   date: [month.July, date.TwentyEighth],
+  type: IType.Css,
+  title: "弹性布局",
+  note: `
+弹性布局实现强制等分
+flex-grow: 1;
+width: 0;
+注: flex: 1;等价于
+flex: 1 1 auto;
+  `,
+  pre: true
+};
+
+const tenth: IDaily = {
+  date: [month.July, date.TwentyNinth],
   type: IType.Js,
   title: "vue3 img",
   note: `
@@ -153,7 +167,8 @@ const July: Array<IDaily> = [
   fifth,
   sixth,
   seventh, eighth,
-  ninth
+  ninth,
+  tenth
 ];
 
 export default July;
