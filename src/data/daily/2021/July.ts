@@ -155,7 +155,50 @@ html
   >
 js
   img = require("@/assets/image/menu/" + imgName);
-`,
+  `,
+  pre: true
+};
+
+const eleventh: IDaily = {
+  date: [month.July, date.Thirtieth],
+  type: IType.Css,
+  title: "样式变量",
+  note: `
+.css文件
+:root{
+  --color: #123456;
+}
+.color{
+  color: var(--color);
+}
+  `,
+  pre: true
+};
+
+const twelfth: IDaily = {
+  date: [month.January, date.ThirtyFirst],
+  type: IType.Js,
+  title: "vue3 element-plus按需引入",
+  note: `
+module.exports = {
+  plugins: [
+    [
+      "import",
+      {
+        libraryName: 'element-plus',
+        customStyleName: (name) => {
+          //  name exp: ElTable el-table
+          return \`element-plus/lib/theme-chalk/${name}.css\`;
+        },
+      },
+    ],
+  ],
+  presets: [
+    '@vue/cli-plugin-babel/preset'
+  ]
+}
+修改无效或报错时,删除node_modules文件夹下的.cache文件夹,重启,可清除node_modules的缓存
+  `,
   pre: true
 };
 
@@ -168,7 +211,7 @@ const July: Array<IDaily> = [
   sixth,
   seventh, eighth,
   ninth,
-  tenth
+  tenth, eleventh, twelfth
 ];
 
 export default July;
