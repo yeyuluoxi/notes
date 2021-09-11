@@ -7,6 +7,7 @@ import April from "@/data/daily/2021/April";
 import May from "@/data/daily/2021/May";
 import June from "@/data/daily/2021/June";
 import July from "@/data/daily/2021/July";
+import August from "@/data/daily/2021/August";
 
 const daily: Array<IDaily> = [
   ...January,
@@ -15,7 +16,8 @@ const daily: Array<IDaily> = [
   ...April,
   ...May,
   ...June,
-  ...July
+  ...July,
+  ...August
 ];
 
 daily.forEach(elem => {

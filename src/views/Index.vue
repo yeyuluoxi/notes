@@ -56,7 +56,6 @@ import {defineComponent, ref} from 'vue';
 import {IDaily, IType} from "@/data/daily/base";
 import daily from "@/data/daily/daily";
 import getDaily from "@/hooks/useGetDaily";
-import getPDF from "@/hooks/getPDF";
 
 export default defineComponent({
 	setup(){
@@ -98,7 +97,6 @@ export default defineComponent({
     };
 
     const searchKey = () => {
-      if(listRef.value) getPDF(listRef.value.querySelector(".right"));
       if(key.value === subKey.value) return;
       subKey.value = key.value;
       const date: string[] = [];

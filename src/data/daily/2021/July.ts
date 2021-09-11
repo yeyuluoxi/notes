@@ -176,7 +176,7 @@ const eleventh: IDaily = {
 };
 
 const twelfth: IDaily = {
-  date: [month.January, date.ThirtyFirst],
+  date: [month.July, date.ThirtyFirst],
   type: IType.Js,
   title: "vue3 element-plus按需引入",
   note: `
